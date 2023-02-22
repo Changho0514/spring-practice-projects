@@ -22,4 +22,8 @@ public class UserDaoService {
         User user = userJoinDto.toEntity();
         userRepository.save(user);
     }
+
+    public void delete(Long userId) {
+        userRepository.deleteById(userId);
+    }
 }

@@ -38,4 +38,11 @@ public class UserController {
 
         return new ResponseEntity<>(message, headers, HttpStatus.OK);
     }
+
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        userDaoService.delete(id);
+
+        return ResponseEntity.ok().build();
+    }
 }
