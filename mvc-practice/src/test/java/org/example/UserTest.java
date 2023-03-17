@@ -1,11 +1,10 @@
 package org.example;
 
-import org.assertj.core.api.Assertions;
+import org.example.PasswordGenerator.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
