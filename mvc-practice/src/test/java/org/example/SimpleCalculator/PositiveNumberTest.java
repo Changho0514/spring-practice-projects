@@ -1,4 +1,4 @@
-package org.example;
+package org.example.SimpleCalculator;
 
 import org.assertj.core.api.Assertions;
 import org.example.calculator.PositiveNumber;

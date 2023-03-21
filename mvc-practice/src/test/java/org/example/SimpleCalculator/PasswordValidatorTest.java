@@ -1,4 +1,4 @@
-package org.example;
+package org.example.SimpleCalculator;
 
 import org.example.PasswordGenerator.PasswordValidator;
 import org.junit.jupiter.api.DisplayName;

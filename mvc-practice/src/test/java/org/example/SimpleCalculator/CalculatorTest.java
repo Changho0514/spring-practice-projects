@@ -1,4 +1,4 @@
-package org.example;
+package org.example.SimpleCalculator;
 
 import org.example.calculator.Calculator;
 import org.example.calculator.PositiveNumber;
