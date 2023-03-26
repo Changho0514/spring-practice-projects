@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.OrderService.CustomerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-23T05:31:07" hostname="choechanghoui-MacBookAir.local" time="0.03">
+  <properties/>
+  <testcase name="메뉴 이름에 해당하는 요리를 주문한다." classname="org.example.OrderService.CustomerTest" time="0.03"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
