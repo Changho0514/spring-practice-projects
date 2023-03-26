@@ -6,6 +6,8 @@ public class RequestLine {
 
     private final String urlPath; ///calculate?operand1=11&operator=*&operand2=55
 
+    private final String protocol;
+
     private  String queryString;
 
     /**
@@ -21,11 +23,14 @@ public class RequestLine {
         if (urlPathTokens.length == 2) {
             this.queryString = urlPathTokens[1];
         }
+
+        this.protocol = tokens[2];
     }
 
-    public RequestLine(String method, String urlPath, String queryString) {
+    public RequestLine(String method, String urlPath, String protocol, String queryString) {
         this.method = method;
         this.urlPath = urlPath;
+        this.protocol = protocol;
         this.queryString = queryString;
     }
 
@@ -34,11 +39,11 @@ public class RequestLine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RequestLine that = (RequestLine) o;
-        return Objects.equals(method, that.method) && Objects.equals(urlPath, that.urlPath) && Objects.equals(queryString, that.queryString);
+        return Objects.equals(method, that.method) && Objects.equals(urlPath, that.urlPath) && Objects.equals(protocol, that.protocol) && Objects.equals(queryString, that.queryString);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(method, urlPath, queryString);
+        return Objects.hash(method, urlPath, protocol, queryString);
     }
 }
