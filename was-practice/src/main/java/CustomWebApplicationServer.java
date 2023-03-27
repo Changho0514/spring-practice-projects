@@ -1,3 +1,5 @@
+import calculator.Calculator;
+import calculator.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,10 +37,26 @@ public class CustomWebApplicationServer {
                     BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
                     DataOutputStream dos = new DataOutputStream(out);
 
-                    String line;
-                    while ((line = br.readLine()) != "") {
-                        System.out.println(line);
+                    HttpRequest httpRequest = new HttpRequest(br);
+
+                    // GET /calculate?operand1=11&operator=*&operand2=55 HTTP/1.1
+                    // GET 요청이면서 /calculate로 들어와야 그제서야 쿼리 스트링을 가져온다
+                    if (httpRequest.isGetRequest() && httpRequest.matchPath("/calculate")) {
+                        QueryStrings queryStrings = httpRequest.getQueryStrings();
+
+                        int operand1 = Integer.parseInt(queryStrings.getValue("operand1"));
+                        String operator = queryStrings.getValue("operator");
+                        int operand2 = Integer.parseInt(queryStrings.getValue("operand2"));
+
+                        int result = Calculator.calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
+
+                        // result값이 정수인데 String으로 감싸서 byte값을 구한다.
+                        byte[] body = String.valueOf(result).getBytes();
+                        HttpResponse response = new HttpResponse(dos);
+                        response.response200Header("application/json", body.length);
+                        response.responseBody(body);
                     }
+
                 }
             }
         }

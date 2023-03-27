@@ -12,7 +12,6 @@ public class RequestLineTest {
         assertThat(requestLine).isEqualTo(
                 new RequestLine("GET",
                         "/calculate",
-                        "HTTP/1.1",
                          "operand1=11&operator=*&operand2=55"
                         ));
 
