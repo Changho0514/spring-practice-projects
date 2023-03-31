@@ -1,6 +1,7 @@
 package org.example;
 
 import javassist.tools.reflect.Reflection;
+import org.assertj.core.api.Assertions;
 import org.example.annotation.Controller;
 import org.example.annotation.Service;
 import org.example.model.User;
@@ -53,6 +54,10 @@ public class ReflectionTest {
         logger.debug("clazz: [{}]", clazz);
         logger.debug("clazz2: [{}]", clazz2);
         logger.debug("clazz3: [{}]", clazz3);
+
+        Assertions.assertThat(clazz == clazz2).isTrue();
+        Assertions.assertThat(clazz3 == clazz2).isTrue();
+        Assertions.assertThat(clazz == clazz3).isTrue();
     }
 
     private Set<Class<?>> getTypesAnnotatedWith(List<Class<? extends Annotation>> annotations) {

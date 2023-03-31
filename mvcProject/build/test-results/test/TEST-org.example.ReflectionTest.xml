@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-31T10:37:58" hostname="choechanghoui-MacBookAir.local" time="0.027">
+<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-31T10:40:02" hostname="choechanghoui-MacBookAir.local" time="0.069">
   <properties/>
-  <testcase name="load()" classname="org.example.ReflectionTest" time="0.027"/>
-  <system-out><![CDATA[19:37:58.732 [Test worker] DEBUG org.example.ReflectionTest - clazz: [class org.example.model.User]
-19:37:58.734 [Test worker] DEBUG org.example.ReflectionTest - clazz2: [class org.example.model.User]
-19:37:58.734 [Test worker] DEBUG org.example.ReflectionTest - clazz3: [class org.example.model.User]
+  <testcase name="load()" classname="org.example.ReflectionTest" time="0.069"/>
+  <system-out><![CDATA[19:40:02.982 [Test worker] DEBUG org.example.ReflectionTest - clazz: [class org.example.model.User]
+19:40:02.985 [Test worker] DEBUG org.example.ReflectionTest - clazz2: [class org.example.model.User]
+19:40:02.985 [Test worker] DEBUG org.example.ReflectionTest - clazz3: [class org.example.model.User]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
