@@ -1,15 +1,17 @@
 package org.example.controller;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserCreateControllerTest {
     @Test
-    public void () throws Exception {
-        //given
+    void createUser() {
+    //given
         
-        //when
-        
-        //then
+    //when
+
+    //then
         
     }
 }
