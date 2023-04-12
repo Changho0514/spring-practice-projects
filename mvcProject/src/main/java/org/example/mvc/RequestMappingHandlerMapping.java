@@ -14,6 +14,8 @@ public class RequestMappingHandlerMapping {
         mappings.put(new HandlerKey(RequestMethod.GET, "/"), new HomeController());
         mappings.put(new HandlerKey(RequestMethod.GET, "/users"), new UserListController());
         mappings.put(new HandlerKey(RequestMethod.POST, "/users"), new UserCreateController());
+
+        //forward
         mappings.put(new HandlerKey(RequestMethod.GET, "/user/form"), new ForwardController("/user/form"));
     }
 
