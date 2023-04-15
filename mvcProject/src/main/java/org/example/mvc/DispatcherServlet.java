@@ -46,9 +46,17 @@ public class DispatcherServlet extends HttpServlet {
             Controller handler = requestMappingHandlerMapping.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()), request.getRequestURI()));
             String viewName = handler.handleRequest(request, response);
 
+            HandlerAdapter handlerAdapter = handlerAdapters.stream()
+                    .filter(ha -> ha.supports(handler))
+                    .findFirst()
+                    .orElseThrow(() -> new ServletException("No adapter for handler [" + handler + "]"));
+
+            ModelAndView modelAndView = handlerAdapter.handle(request, response, handler);
+
+
             for (ViewResolver viewResolver : viewResolvers) {
                 View view = viewResolver.resolveView(viewName);
-                view.render(new HashMap<>(), request, response);
+                view.render(modelAndView.getModel(), request, response);
 
             }
         } catch (Exception e) {
